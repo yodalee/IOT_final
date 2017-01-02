@@ -10,6 +10,7 @@ class PIRSensor(WuClass):
         WuClass.__init__(self)
         self.loadClass('PIR_Sensor')
         self.IO = pin_mode(PIRSensor_Pin, PIN_TYPE_DIGITAL, PIN_MODE_INPUT)
+        print("PIR Sensor Init Success")
 
     def update(self,obj,pID=None,val=None):
         try:

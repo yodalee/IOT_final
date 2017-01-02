@@ -10,6 +10,7 @@ class TouchSensor(WuClass):
         WuClass.__init__(self)
         self.loadClass('Touch_Sensor')
         self.IO = pin_mode(Touch_Sensor_Pin, PIN_TYPE_DIGITAL, PIN_MODE_INPUT)
+        print("Touch Sensor Init Success")
 
     def update(self,obj,pID=None,val=None):
         try:

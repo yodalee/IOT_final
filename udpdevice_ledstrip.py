@@ -29,10 +29,10 @@ def closeLEDStrip():
 
 atexit.register(closeLEDStrip)
 
-class LED_Pattern(WuClass):
+class Pattern(WuClass):
     def __init__(self):
         WuClass.__init__(self)
-        self.loadClass('LED_Pattern')
+        self.loadClass('Pattern')
         self.state = 0
         print ("LED Pattern Init Success")
 

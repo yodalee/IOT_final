@@ -11,19 +11,18 @@ class Collector(WuClass):
 
     def update(self,obj,pID,val):
         if pID == 0 or pID == 1:
+            print "Collector update: ",
             pir_in = obj.getProperty(0)
             touch_in = obj.getProperty(1)
 
-        if pir_in == True:
-            self.state = self.state + 1
-            obj.setProperty(3, self.state)
-            print "pir detect"
-        elif touch_in == True:
-            self.state = self.state - 1
-            obj.setProperty(3, self.state)
-            print "touch detect"
-        else:
-            obj.setProperty(3, self.state)
+            if pir_in == True:
+                print "pir detect"
+                self.state = (self.state + 1) % 4
+            elif touch_in == True:
+                print "touch detect"
+                self.state = (self.state - 1) % 4
+
+            obj.setProperty(2, self.state)
 
 if __name__ == "__main__":
     class MyDevice(Device):

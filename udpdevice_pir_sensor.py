@@ -15,8 +15,9 @@ class PIRSensor(WuClass):
     def update(self,obj,pID=None,val=None):
         try:
             current_value = digital_read(self.IO)
-            print "PIR sensor value: %d" % current_value
             obj.setProperty(0, current_value)
+            if current_value:
+                print "PIR sensor value: %d" % current_value
         except IOError:
             print "Error"
 

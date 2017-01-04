@@ -47,14 +47,12 @@ class Pattern(WuClass):
                     setLEDStrip(ledOff, ledW, ledOff, ledW)
                 elif self.state == 3:
                     setLEDStrip(ledW, ledW, ledW, ledW)
-                # refresh
-                print("LED Pattern Refresh %d" % (self.state))
 
             elif pID == 0:
                 # value update
                 self.state = val
-
                 print("LED_Pattern update state: %d" %(self.state))
+
         except IOError:
             print("LED_Pattern Error")
 
@@ -65,7 +63,7 @@ if __name__ == "__main__":
             Device.__init__(self,addr,localaddr)
 
         def init(self):
-            m1 = LED_Pattern()
+            m1 = Pattern()
             self.addClass(m1,0)
             self.obj_counter = self.addObject(m1.ID)
 

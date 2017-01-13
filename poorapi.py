@@ -71,4 +71,4 @@ def regisit(dev_id , ip):
 	f.close()
 	return '['+dev_id+', '+ip+', '+port+']'
 
-run(host='10.5.6.248', port=23456, debug=True)
+run(host='10.5.3.92', port=23456, debug=True)

@@ -148,9 +148,24 @@
         <property name="pattern" access="readonly" datatype="short" default="0"  />
     </WuClass>
     <WuClass name="Collector" id="19" virtual="true" type="soft">
-        <property name="pir_in" access="writeonly" datatype="boolean" default="false"  />
-        <property name="touch_in" access="writeonly" datatype="boolean" default="false"  />
+        <property name="pir_in" access="readwrite" datatype="boolean" default="false"  />
+        <property name="touch_in" access="readwrite" datatype="boolean" default="false"  />
+        <property name="light_in" access="readwrite" datatype="short" default="0"  />
         <property name="pattern" access="readonly" datatype="short" default="0" />
+        <property name="uploadid" access="readonly" datatype="short" default="0" />
+        <property name="uploadvalue" access="readonly" datatype="short" default="0" />
+        <property name="downloadid" access="writeonly" datatype="short" default="0" />
+        <property name="downloadvalue" access="writeonly" datatype="short" default="0" />
+        <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="1000"  />
+    </WuClass>
+   <WuClass name="RESTDaemon" id="20" virtual="true" type="soft">
+        <property name="serveradr" access="readwrite" datatype="string" default="" />
+        <property name="deviceid" access="readwrite" datatype="short" default="0" />
+        <property name="uploadtype" access="writeonly" datatype="short" default="0"/>
+        <property name="uploadvalue" access="writeonly" datatype="short" default="0"/>
+        <property name="downloadtype" access="readonly" datatype="short" default="0"/>
+        <property name="downloadvalue" access="readonly" datatype="short" default="0"/>
+        <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="100"  />
     </WuClass>
 
     <!-- Sensors -->
@@ -496,14 +511,6 @@
     </WuClass>
     <WuClass name="Pattern" id="2038" virtual="false" type="hard">
         <property name="index" access="writeonly" datatype="short"  />
-        <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="50"  />
-    </WuClass>
-    <WuClass name="AWS_Daemon" id="2039" virtual="false" type="hard">
-        <property name="selfID" access="readwrite" datatype="short" default="0" />
-        <property name="left_recv" access="readwrite" datatype="boolean" default="false"/>
-        <property name="right_recv" access="readwrite" datatype="boolean" default="false"/>
-        <property name="left_signal" access="readwrite" datatype="boolean" default="false"/>
-        <property name="right_signal" access="readwrite" datatype="boolean" default="false"/>
         <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="50"  />
     </WuClass>
 

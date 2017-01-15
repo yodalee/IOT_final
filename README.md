@@ -1,6 +1,8 @@
-大樓智慧照明服務
+Team 7 大樓智慧照明服務
+======================
 
-team7
-
-poorapi is REST server.
-Else files must place in the right place in WuKong.
+* server.py is the REST server, and should be run on server computer.
+* Other files must place to right place in WuKong, the deploy.sh can help you deploy those files.
+* The demo video links contain in `demovideo`
+* Report document in `report`
+* Presentation slide in `slide`
